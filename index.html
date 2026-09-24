@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Wordle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">50 boards · 2 letters · 1 challenge</p>
+        <h1>Double Wordle</h1>
+        <p class="subtitle">Find all 50 tiny words at once. Green means correct, gold means the letter is in the word.</p>
+      </div>
+      <button id="new-game" class="secondary-button" type="button">New game</button>
+    </header>
+
+    <section class="stats" aria-label="Game statistics">
+      <div><span id="solved-count">0</span><small>SOLVED</small></div>
+      <div><span id="guess-count">0</span><small>GUESSES</small></div>
+      <div><span id="remaining-count">50</span><small>REMAINING</small></div>
+    </section>
+
+    <form id="guess-form" class="guess-form" autocomplete="off">
+      <label for="guess-input">Your guess</label>
+      <div class="input-row">
+        <input id="guess-input" name="guess" maxlength="2" minlength="2" pattern="[a-zA-Z]{2}" placeholder="AB" aria-describedby="message" required />
+        <button class="primary-button" type="submit">Guess</button>
+      </div>
+      <p id="message" class="message" role="status">Enter any two-letter word to begin.</p>
+    </form>
+
+    <section id="boards" class="boards" aria-label="50 word boards"></section>
+
+    <footer>Every board shares your guesses. Can you clear all 50?</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
